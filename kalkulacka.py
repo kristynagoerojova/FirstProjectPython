@@ -14,9 +14,9 @@ def spocitej_to():
     elif operator == "/":
         return prvni_cislo / druhe_cislo
     else:
-        return "Nespravny operator"
+        return "Zadal si nespravny operator"
 
 vysledek = spocitej_to()
 
-print(f"Vysledek je {vysledek}.")
+print(f"Vysledek: {vysledek}.")
 
