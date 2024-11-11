@@ -12,7 +12,10 @@ def spocitej_to():
     elif operator == "*":
         return prvni_cislo * druhe_cislo
     elif operator == "/":
-        return prvni_cislo / druhe_cislo
+        try:
+            return prvni_cislo / druhe_cislo
+        except ZeroDivisionError:
+            print("Nelze delit nulou.")
     else:
         return "Zadal si nespravny operator"
 
