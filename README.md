@@ -1,1 +1,4 @@
 # FirstProjectPython
+
+Toto je readme
+
