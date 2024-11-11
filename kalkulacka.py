@@ -1,7 +1,12 @@
 def spocitej_to():
-    prvni_cislo = int(input("Zadej cislo: "))
+    try:
+        prvni_cislo = int(input("Zadej cislo: "))
+    except ValueError:
+        print("Muzes zadat pouze cislo.")
 
     operator = input("Zadej operator (+, -, *, /): ")
+    if operator not in ["+", "-", "*", "/"]:
+        raise ValueError("Spatne zadane znamenko")
 
     druhe_cislo = int(input("Zadej dalsi cislo: "))
 
