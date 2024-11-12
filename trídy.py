@@ -1,22 +1,22 @@
-class Animals:
+class Animal:
     def __init__(self, weight, age):
         self.weight = weight
         self.age = age
     def look(self):
-        print(f"The {self.age} y.o. animal weighs {self.weight} and looks around.")
+        print(f"The {self.age} y.o. animal weighs {self.weight} kg and looks around.")
 
     def breathe(self):
-        print(f"The {self.age} y.o. animal weighs {self.weight} and breathes.")
+        print(f"The {self.age} y.o. animal weighs {self.weight} kg and breathes.")
 
-class Fish(Animals):
+class Fish(Animal):
     def swim(self):
-        print(f"The {self.age} y.o. fish weighs {self.weight} and can swim.")
+        print(f"The {self.age} y.o. fish weighs {self.weight} kg and can swim.")
 
-class Mammals(Animals):
+class Mammal(Animal):
     def run(self):
-        print(f"The {self.age} y.o. mammal weighs {self.weight} and can run.")
+        print(f"The {self.age} y.o. mammal weighs {self.weight} kg and can run.")
 
-class DomesticDog(Mammals):
+class DomesticDog(Mammal):
     def __init__(self, weight, age, breed, coat_color):
         super().__init__(weight, age)
         self.breed = breed
@@ -28,7 +28,7 @@ class DomesticDog(Mammals):
     def retrieve(self):
         print(f"My {self.age} y.o. {self.coat_color} {self.breed} weighs {self.weight} kg and retrieves.")
 
-class Birds(Animals):
+class Bird(Animal):
     def fly(self):
         print(f"The {self.age} y.o. bird weighs {self.weight} kg and can fly.")
 
@@ -36,10 +36,10 @@ class Birds(Animals):
 my_dog = DomesticDog(10,8,"German boxer", "brindle" )
 my_dog.bark()
 
-my_bird = Birds(2, 15)
+my_bird = Bird(2, 15)
 my_bird.fly()
 
-generic_animal = Animals(150, 30)
+generic_animal = Animal(150, 30)
 generic_animal.breathe()
 
 
