@@ -8,6 +8,12 @@ class Animal:
         Animal.total_weight += weight
         Animal.all_animals.append(self)
 
+    def set_weight(self, new_weight):
+        Animal.total_weight -= self.weight
+        self.weight = new_weight
+        Animal.total_weight += new_weight
+        print(f"New weight: {new_weight}")
+
     def look(self):
         print(f"The {self.age} y.o. animal weighs {self.weight} kg and looks around.")
 
@@ -64,7 +70,7 @@ zvire = Animal(250, 30)
 Animal.get_total_weight()
 Animal.print_weights()
 
-
+my_bird.set_weight(10)
 
 
 
