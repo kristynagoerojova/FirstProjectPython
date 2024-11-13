@@ -1,10 +1,12 @@
 class Animal:
     total_weight = 0
+    all_animals = []
 
     def __init__(self, weight, age):
         self.weight = weight
         self.age = age
         Animal.total_weight += weight
+        Animal.all_animals.append(self)
 
     def look(self):
         print(f"The {self.age} y.o. animal weighs {self.weight} kg and looks around.")
@@ -15,6 +17,11 @@ class Animal:
     @classmethod
     def get_total_weight(cls):
         print(f"Total weigh of animals is {cls.total_weight}")
+
+    @classmethod
+    def print_weights(cls):
+        for animal in Animal.all_animals:
+            print(f"{animal.weight} kg")
 
 class Fish(Animal):
     def swim(self):
@@ -41,6 +48,8 @@ class Bird(Animal):
         print(f"The {self.age} y.o. bird weighs {self.weight} kg and can fly.")
 
 
+
+
 my_dog = DomesticDog(10,8,"German boxer", "brindle" )
 # my_dog.bark()
 #
@@ -53,6 +62,9 @@ generic_animal = Animal(150, 30)
 zvire = Animal(250, 30)
 
 Animal.get_total_weight()
+Animal.print_weights()
+
+
 
 
 
