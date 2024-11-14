@@ -18,13 +18,13 @@
 
 def with_password(func):
     def zadej_heslo(age, name):
-        heslo = input("Zadejte heslo: ")
-        if heslo == "Hesloje12345":
-            print("Spravne heslo")
-            return func(age, name)
-        else:
-            print("Nespravne heslo")
-            return
+        while True:
+            heslo = input("Zadejte heslo: ")
+            if heslo == "Hesloje12345":
+                print("Spravne heslo")
+                return func(age, name)
+            else:
+                print("Nespravne heslo")
     return zadej_heslo
 
 
