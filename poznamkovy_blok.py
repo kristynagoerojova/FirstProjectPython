@@ -1,4 +1,5 @@
 import csv
+import pickle
 
 poznamky = []
 
@@ -30,8 +31,8 @@ def smazat_poznamku(poznamky):
             poradi = int(input("Ktery radek chcete smazat? "))
 
             if poradi <= len(poznamky):
-                smazana_poznamka = poznamky.pop(poradi - 1)
-                print(f"Poznamka cislo {poradi} '{smazana_poznamka}' byla smazana.")
+                del poznamky[poradi - 1]
+                print(f"Poznamka byla smazana.")
                 break
             else:
                 print(f"Zadejte cislo v rozmezi 1 az {len(poznamky)}")
@@ -88,7 +89,7 @@ def nacist_z_csv():
 pridat_poznamku()
 vypis_poznamky(poznamky)
 smazat_poznamku(poznamky)
-upravit_poznamku(poznamky)
-
-ulozit_do_csv(poznamky)
-nacist_z_csv()
+# upravit_poznamku(poznamky)
+#
+# ulozit_do_csv(poznamky)
+# nacist_z_csv()
