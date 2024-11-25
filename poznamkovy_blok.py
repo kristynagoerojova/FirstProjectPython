@@ -1,5 +1,6 @@
 import csv
 import pickle
+import json
 
 poznamky = []
 
@@ -84,12 +85,37 @@ def nacist_z_csv():
             print(row)
 
 
+def ulozit_do_pkl(poznamky):
+    if not poznamky:
+        print("Seznam poznámek je prázdný.")
+        return
+
+    nazev_souboru = input("Zadej nazev noveho souboru: ")
+
+    with open(nazev_souboru, 'wb') as novy_soubor:
+        pickle.dump(poznamky, novy_soubor)
+
+
+def ulozit_do_json(poznamky):
+    if not poznamky:
+        print("Seznam poznámek je prázdný.")
+        return
+
+    nazev_souboru = input("Zadej nazev noveho souboru: ")
+
+    with open(nazev_souboru, 'w') as novy_soubor:
+        json.dump(poznamky, novy_soubor)
+
 
 
 pridat_poznamku()
 vypis_poznamky(poznamky)
-smazat_poznamku(poznamky)
+# smazat_poznamku(poznamky)
 # upravit_poznamku(poznamky)
 #
 # ulozit_do_csv(poznamky)
 # nacist_z_csv()
+
+# ulozit_do_pkl(poznamky)
+ulozit_do_json(poznamky)
+
