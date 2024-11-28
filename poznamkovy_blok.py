@@ -1,6 +1,8 @@
 import csv
 import pickle
 import json
+import tkinter as tk
+
 
 poznamky = []
 
@@ -136,7 +138,7 @@ def nacist_z_json():
 
 #program
 
-def poznamkovy_blok():
+def spustit_poznamkovy_blok():
     print("Vitej v tvem poznámkovém bloku! \n")
 
     while True:
@@ -190,7 +192,7 @@ def poznamkovy_blok():
         except ValueError:
             print("Zadej pouze cela cisla.")
 
-poznamkovy_blok()
+spustit_poznamkovy_blok()
 
 
 # as a class
@@ -295,6 +297,8 @@ class Poznamkovy_blok:
 
         with open(nazev_souboru, 'w') as novy_soubor:
             json.dump(self.poznamky, novy_soubor)
+
+
 #
 #
 #
